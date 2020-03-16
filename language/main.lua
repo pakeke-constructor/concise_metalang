@@ -11,14 +11,6 @@ local print = function(...)
 end
 
 
---[[
-Language name:
-paralock
-
-Version: 1.0
-
-]]
-
 
 --[[
 global functions:
