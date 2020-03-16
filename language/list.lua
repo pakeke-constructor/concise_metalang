@@ -14,8 +14,8 @@ list.new = function(...)
 end
 
 function list:add(value)
-    self[self.len] = value
     self.len = self.len + 1
+    self[self.len] = value
 end
 
 function list:reverse()
