@@ -35,15 +35,32 @@ object() --> to be used by user
 do
     -- For special methods, keeps count of nested funcs to ensure argument signature is different.
     _NV_COUNTER = 0
+    
+    list = require('language/list')
+    set = require("language/sets/sets")
+    
+    -- Automatic indexing.
+    math.math = math
+    string.string = string
+    io.io = io
+    local libs = list()
+    setmetatable(_G, {__index = math})
+    setmetatable(math, {__index = string})
+    setmetatable(io, {__index = function(t,k) 
+        for key,val in pairs(libs) do
+            if val[k] then
+                return val[k]
+            end
+        end
+    end})
+
 
     local function NV_setmeta(a,b)
         a.NV = b
         a.__index = a
         return setmetatable(a,b)
     end
-
-    list = require('language/list')
-    set = require("language/sets/sets")
+    
 
     local t2at = {}
     local function NV_get_address(par)
