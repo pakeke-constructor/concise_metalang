@@ -1,0 +1,32 @@
+
+
+
+*|
+need a nice way of creating factory patterns.
+The syntax used will be  ::factory::
+
+example:
+|*
+
+
+
+$Factory
+
+Factory = obj @ {
+    obj:{
+        .x = x
+        .y = y
+        .z = @ 
+    }
+}
+
+
+::Factory::
+$l = @       | gets pushed into `Factory` constuctor
+
+
+
+
+
+
+
