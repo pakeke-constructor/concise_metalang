@@ -1,5 +1,5 @@
-# concise_metalang
-A silly little prototype-based language built on minimalist syntax that compiles to lua
 
+Language that compiles to lua.
+lexer and ASG is unfinished and will probably change a lot
 
 VERY UNFINISHED
